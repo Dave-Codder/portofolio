@@ -40,7 +40,7 @@ export default function Contact() {
     >
       <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg max-w-md w-full text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Contact</h1>
-        <p className="text-text mb-6 text-sm md:text-base">Daveo Dava Putra - Portfolio | Software Engineering</p>
+        <p className="text-text mb-6 text-sm md:text-base">Daveo Dava Putra - Portofolio | Software Engineering</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input 
             type="text" 
