@@ -13,11 +13,11 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Attendance Application for BimbelMyTrabelajar Admin-Teacher",
+      title: "Attendance Application for BimbelMytraBelajar Admin-Teacher",
       desc: "A robust attendance tracking app for tutoring sessions, built with Android Studio.",
-      tech: "Kotlin, XML, Android SDK",
+      tech: "Kotlin, XML, Android Studio",
       background:
-        "Created to streamline attendance management for the BimbelMyTrabelajar tutoring service, designed for admin and teacher collaboration.",
+        "Created to streamline attendance management for the BimbelMytraBelajar tutoring service, designed for admin and teacher collaboration.",
       function:
         "Enables attendance recording, real-time updates, and notifications for both admin and teacher users.",
       type: "android",
@@ -25,50 +25,53 @@ export default function Projects() {
       image: "/images/Proyek Belajar.png",
     },
     {
-      title: "FitTrack Android",
-      desc: "A fitness tracking app for workout logging.",
-      tech: "Kotlin, Android Studio",
-      background: "Created for fitness enthusiasts to monitor exercises.",
-      function: "Tracks workouts, calories, and progress over time.",
-      type: "android",
-      downloadLink: "https://example.com/fittrack.apk", // Replace with actual APK URL
-    },
+    title: "Combined Material PAB Elektro Android Application",
+    subtitle: "Mobile Programming Course Project",
+    desc: "An educational app integrating key mobile programming concepts.",
+    tech: "Kotlin, XML, Android Studio",
+    background: "Developed as a project for the Mobile Application Programming (PAB) course at the Electrical Engineering department, this app combines three distinct modules to demonstrate practical Android development skills.",
+    function: "Features a quiz module for interactive learning, an earthquake data module fetching JSON data for real-time updates, and a media player module supporting music and video playback.",
+    type: "android",
+    downloadLink: "https://link-hub.net/1373399/kh9T8YAAMecj"
+  },
+    // {
+    //   title: "NoteSync Android",
+    //   desc: "A synchronized note-taking app with cloud backup.",
+    //   tech: "Android SDK, Firebase",
+    //   background: "Designed for users needing secure note storage.",
+    //   function: "Syncs notes across devices with cloud support.",
+    //   type: "android",
+    //   downloadLink: "https://example.com/notesync.apk", // Replace with actual APK URL
+    // },
+    // {
+    //   title: "ShopEasy Android",
+    //   desc: "A shopping list app with barcode scanning.",
+    //   tech: "Kotlin, ZXing Library",
+    //   background: "Built to simplify grocery shopping for users.",
+    //   function: "Scans barcodes and manages shopping lists.",
+    //   type: "android",
+    //   downloadLink: "https://example.com/shopeasy.apk", // Replace with actual APK URL
+    // },
+    // {
+    //   title: "AdminPanel Web",
+    //   desc: "A web-based admin dashboard for content management.",
+    //   tech: "React, Node.js, MongoDB",
+    //   background: "Developed for managing user content and analytics.",
+    //   function: "Provides admin controls and data visualization.",
+    //   type: "web",
+    //   webLink: "https://example.com/adminpanel", // Replace with actual web URL
+    // },
     {
-      title: "NoteSync Android",
-      desc: "A synchronized note-taking app with cloud backup.",
-      tech: "Android SDK, Firebase",
-      background: "Designed for users needing secure note storage.",
-      function: "Syncs notes across devices with cloud support.",
-      type: "android",
-      downloadLink: "https://example.com/notesync.apk", // Replace with actual APK URL
-    },
-    {
-      title: "ShopEasy Android",
-      desc: "A shopping list app with barcode scanning.",
-      tech: "Kotlin, ZXing Library",
-      background: "Built to simplify grocery shopping for users.",
-      function: "Scans barcodes and manages shopping lists.",
-      type: "android",
-      downloadLink: "https://example.com/shopeasy.apk", // Replace with actual APK URL
-    },
-    {
-      title: "AdminPanel Web",
-      desc: "A web-based admin dashboard for content management.",
-      tech: "React, Node.js, MongoDB",
-      background: "Developed for managing user content and analytics.",
-      function: "Provides admin controls and data visualization.",
-      type: "web",
-      webLink: "https://example.com/adminpanel", // Replace with actual web URL
-    },
-    {
-      title: "EduLearn Hybrid",
-      desc: "A learning app with web integration for courses.",
-      tech: "Flutter, Dart, WebView",
-      background: "Created to offer educational content on multiple platforms.",
-      function: "Delivers lessons on Android and web browsers.",
+      title: "Tokoku Client App and Admin Web Panel",
+      desc: "An e-commerce solution with a mobile client and web admin interface.",
+      tech: "Flutter, Dart, PHP, Blade, VSCode, MySQL",
+      background:
+        "Developed to create a comprehensive e-commerce platform for Tokoku, featuring a mobile app for customers and a web admin panel for store management, built using a mix of modern tools and databases.",
+      function:
+        "Enables customers to browse and purchase products via the Android app, while the web panel allows admins to manage inventory, orders, and user accounts with real-time updates.",
       type: "hybrid",
-      downloadLink: "https://example.com/edulearn.apk", // Replace with actual APK URL
-      webLink: "https://example.com/edulearn", // Replace with actual web URL
+      downloadLink: "https://link-target.net/1373399/HNivrRDagcQP",
+      webLink: "https://link-center.net/1373399/QwPkMMVcmsRp",
     },
   ];
 
