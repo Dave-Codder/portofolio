@@ -12,7 +12,7 @@ export default function Home() {
       className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary to-secondary p-8"
     >
       <h1 className="text-5xl font-bold text-white mb-4">
-        Welcome to My Portfolio
+        Welcome to My Portofolio
       </h1>
       <p className="text-xl text-white text-center max-w-2xl">
         My Name Is Daveo Dava Putra, And i live in pangkal pinang, at bangka

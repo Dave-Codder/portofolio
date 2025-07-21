@@ -1,20 +1,74 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Projects() {
+  const description = `
+    This section showcases my portfolio of projects, built using a variety of technologies and programming languages. 
+    The projects range from Android mobile applications to a web admin panel and a hybrid Flutter app integrated with web features. 
+    Each project reflects my skills in developing functional, user-friendly solutions with diverse backgrounds, 
+    including personal initiatives and client-based developments. Explore the previews and access the apps or websites below.
+  `;
+
   const projects = [
     {
-      title: "Project Alpha",
-      desc: "A web app built with React and Node.js for seamless user experiences.",
+      title: "Attendance Application for BimbelMyTrabelajar Admin-Teacher",
+      desc: "A robust attendance tracking app for tutoring sessions, built with Android Studio.",
+      tech: "Kotlin, XML, Android SDK",
+      background:
+        "Created to streamline attendance management for the BimbelMyTrabelajar tutoring service, designed for admin and teacher collaboration.",
+      function:
+        "Enables attendance recording, real-time updates, and notifications for both admin and teacher users.",
+      type: "android",
+      downloadLink: "https://direct-link.net/1373399/VrLkLPIjBWtK",
+      image: "/images/Proyek Belajar.png",
     },
     {
-      title: "Project Beta",
-      desc: "A mobile-responsive e-commerce platform with secure payment integration.",
+      title: "FitTrack Android",
+      desc: "A fitness tracking app for workout logging.",
+      tech: "Kotlin, Android Studio",
+      background: "Created for fitness enthusiasts to monitor exercises.",
+      function: "Tracks workouts, calories, and progress over time.",
+      type: "android",
+      downloadLink: "https://example.com/fittrack.apk", // Replace with actual APK URL
     },
     {
-      title: "Project Gamma",
-      desc: "A data visualization dashboard using D3.js and Next.js.",
+      title: "NoteSync Android",
+      desc: "A synchronized note-taking app with cloud backup.",
+      tech: "Android SDK, Firebase",
+      background: "Designed for users needing secure note storage.",
+      function: "Syncs notes across devices with cloud support.",
+      type: "android",
+      downloadLink: "https://example.com/notesync.apk", // Replace with actual APK URL
+    },
+    {
+      title: "ShopEasy Android",
+      desc: "A shopping list app with barcode scanning.",
+      tech: "Kotlin, ZXing Library",
+      background: "Built to simplify grocery shopping for users.",
+      function: "Scans barcodes and manages shopping lists.",
+      type: "android",
+      downloadLink: "https://example.com/shopeasy.apk", // Replace with actual APK URL
+    },
+    {
+      title: "AdminPanel Web",
+      desc: "A web-based admin dashboard for content management.",
+      tech: "React, Node.js, MongoDB",
+      background: "Developed for managing user content and analytics.",
+      function: "Provides admin controls and data visualization.",
+      type: "web",
+      webLink: "https://example.com/adminpanel", // Replace with actual web URL
+    },
+    {
+      title: "EduLearn Hybrid",
+      desc: "A learning app with web integration for courses.",
+      tech: "Flutter, Dart, WebView",
+      background: "Created to offer educational content on multiple platforms.",
+      function: "Delivers lessons on Android and web browsers.",
+      type: "hybrid",
+      downloadLink: "https://example.com/edulearn.apk", // Replace with actual APK URL
+      webLink: "https://example.com/edulearn", // Replace with actual web URL
     },
   ];
 
@@ -23,11 +77,14 @@ export default function Projects() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen p-8 bg-primary"
+      className="min-h-screen p-8 bg-primary pb-20" // Added pb-20 for bottom padding
     >
       <h1 className="text-4xl md:text-5xl font-bold text-text mb-12 text-center">
         My Projects
       </h1>
+      <p className="text-text text-center max-w-2xl mx-auto mb-8">
+        {description}
+      </p>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
@@ -41,7 +98,58 @@ export default function Projects() {
             <h2 className="text-2xl font-semibold text-secondary mb-2">
               {project.title}
             </h2>
-            <p className="text-text">{project.desc}</p>
+            <p className="text-text mb-2">{project.desc}</p>
+            <p className="text-sm text-gray-400 mb-2">Tech: {project.tech}</p>
+            <p className="text-sm text-gray-400 mb-2">
+              Background: {project.background}
+            </p>
+            <p className="text-sm text-gray-400 mb-2">
+              Function: {project.function}
+            </p>
+            {project.type === "android" && (
+              <Link href={project.downloadLink}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-4 bg-secondary text-primary px-4 py-2 rounded-full text-center cursor-pointer font-semibold transition-all duration-300 hover:bg-opacity-90"
+                >
+                  Download App
+                </motion.div>
+              </Link>
+            )}
+            {project.type === "web" && (
+              <Link href={project.webLink}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-4 bg-secondary text-primary px-4 py-2 rounded-full text-center cursor-pointer font-semibold transition-all duration-300 hover:bg-opacity-90"
+                >
+                  Visit Website
+                </motion.div>
+              </Link>
+            )}
+            {project.type === "hybrid" && (
+              <>
+                <Link href={project.downloadLink}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mt-4 bg-secondary text-primary px-4 py-2 rounded-full text-center cursor-pointer font-semibold transition-all duration-300 hover:bg-opacity-90 mr-2"
+                  >
+                    Download App
+                  </motion.div>
+                </Link>
+                <Link href={project.webLink}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mt-4 bg-secondary text-primary px-4 py-2 rounded-full text-center cursor-pointer font-semibold transition-all duration-300 hover:bg-opacity-90"
+                  >
+                    Visit Website
+                  </motion.div>
+                </Link>
+              </>
+            )}
           </motion.div>
         ))}
       </div>
