@@ -58,7 +58,7 @@ export default function Projects() {
       function:
         "Enables customers to order food easily, with an admin account (username: admin, password: admin123) for managing the system.",
       type: "android",
-      downloadLink: "https://shrinkme.ink/Swalayanku_App",
+      downloadLink: "https://shrinkme.ink/Swalayanku",
     },
     // {
     //   title: "AdminPanel Web",
