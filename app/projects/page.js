@@ -21,7 +21,7 @@ export default function Projects() {
       function:
         "Enables attendance recording, real-time updates, and notifications for both admin and teacher users.",
       type: "android",
-      downloadLink: "https://direct-link.net/1373399/VrLkLPIjBWtK",
+      downloadLink: "https://shrinkme.ink/BimbelMytraBelajar",
       image: "/images/Proyek Belajar.png",
     },
     {
@@ -32,7 +32,7 @@ export default function Projects() {
     background: "Developed as a project for the Mobile Application Programming (PAB) course at the Electrical Engineering department, this app combines three distinct modules to demonstrate practical Android development skills.",
     function: "Features a quiz module for interactive learning, an earthquake data module fetching JSON data for real-time updates, and a media player module supporting music and video playback.",
     type: "android",
-    downloadLink: "https://link-hub.net/1373399/kh9T8YAAMecj"
+    downloadLink: "https://shrinkme.ink/PAB_Elektro_App"
   },
     // {
     //   title: "NoteSync Android",
@@ -70,8 +70,8 @@ export default function Projects() {
       function:
         "Enables customers to browse and purchase products via the Android app, while the web panel allows admins to manage inventory, orders, and user accounts with real-time updates.",
       type: "hybrid",
-      downloadLink: "https://link-target.net/1373399/HNivrRDagcQP",
-      webLink: "https://link-center.net/1373399/QwPkMMVcmsRp",
+      downloadLink: "https://shrinkme.ink/Tokoku_App",
+      webLink: "https://shrinkme.ink/Tokoku_Admin",
     },
   ];
 
