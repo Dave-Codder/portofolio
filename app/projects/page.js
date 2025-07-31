@@ -25,33 +25,41 @@ export default function Projects() {
       image: "/images/Proyek Belajar.png",
     },
     {
-    title: "Combined Material PAB Elektro Android Application",
-    subtitle: "Mobile Programming Course Project",
-    desc: "An educational app integrating key mobile programming concepts.",
-    tech: "Kotlin, XML, Android Studio",
-    background: "Developed as a project for the Mobile Application Programming (PAB) course at the Electrical Engineering department, this app combines three distinct modules to demonstrate practical Android development skills.",
-    function: "Features a quiz module for interactive learning, an earthquake data module fetching JSON data for real-time updates, and a media player module supporting music and video playback.",
-    type: "android",
-    downloadLink: "https://shrinkme.ink/PAB_Elektro_App"
-  },
-    // {
-    //   title: "NoteSync Android",
-    //   desc: "A synchronized note-taking app with cloud backup.",
-    //   tech: "Android SDK, Firebase",
-    //   background: "Designed for users needing secure note storage.",
-    //   function: "Syncs notes across devices with cloud support.",
-    //   type: "android",
-    //   downloadLink: "https://example.com/notesync.apk", // Replace with actual APK URL
-    // },
-    // {
-    //   title: "ShopEasy Android",
-    //   desc: "A shopping list app with barcode scanning.",
-    //   tech: "Kotlin, ZXing Library",
-    //   background: "Built to simplify grocery shopping for users.",
-    //   function: "Scans barcodes and manages shopping lists.",
-    //   type: "android",
-    //   downloadLink: "https://example.com/shopeasy.apk", // Replace with actual APK URL
-    // },
+      title: "Combined Material PAB Elektro Android Application",
+      subtitle: "Mobile Programming Course Project",
+      desc: "An educational app integrating key mobile programming concepts.",
+      tech: "Kotlin, XML, Android Studio",
+      background:
+        "Developed as a project for the Mobile Application Programming (PAB) course at the Electrical Engineering department, this app combines three distinct modules to demonstrate practical Android development skills.",
+      function:
+        "Features a quiz module for interactive learning, an earthquake data module fetching JSON data for real-time updates, and a media player module supporting music and video playback.",
+      type: "android",
+      downloadLink: "https://shrinkme.ink/PAB_Elektro_App",
+    },
+    {
+      title: "Drawing App for Android",
+      subtitle: "Mobile Programming Course Project",
+      desc: "A learning tool for creating and displaying shapes in Android applications.",
+      tech: "Kotlin, XML, Android Studio",
+      background:
+        "Developed for the Mobile Application Programming (PAB) course in the Software Engineering Technology class, this app focuses on teaching Android graphics programming with Kotlin by enabling shape rendering.",
+      function:
+        "Allows users to draw and display geometric shapes on the screen as a learning tool for Android graphics.",
+      type: "android",
+      downloadLink: "https://shrinkme.ink/Aplikasi_Drawing",
+    },
+    {
+      title: "Swalayanku App for Android",
+      subtitle: "Mobile Programming Group Project",
+      desc: "An app for UMKM to facilitate food ordering for customers.",
+      tech: "Kotlin, XML, SQLite, Android Studio",
+      background:
+        "Developed as a group project for the Mobile Application Programming (PAB) course in the Software Engineering Technology class, this app supports UMKM by providing a platform for easy food ordering.",
+      function:
+        "Enables customers to order food easily, with an admin account (username: admin, password: admin123) for managing the system.",
+      type: "android",
+      downloadLink: "https://shrinkme.ink/Swalayanku_App",
+    },
     // {
     //   title: "AdminPanel Web",
     //   desc: "A web-based admin dashboard for content management.",
