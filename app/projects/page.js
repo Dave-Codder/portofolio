@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Projects() {
   const description = `
-    This section showcases my portfolio of projects, built using a variety of technologies and programming languages. 
+    This section showcases my portofolio of projects, built using a variety of technologies and programming languages. 
     The projects range from Android mobile applications to a web admin panel and a hybrid Flutter app integrated with web features. 
     Each project reflects my skills in developing functional, user-friendly solutions with diverse backgrounds, 
     including personal initiatives and client-based developments. Explore the previews and access the apps or websites below.
