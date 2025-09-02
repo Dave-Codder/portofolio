@@ -5,9 +5,14 @@ import { motion } from "framer-motion";
 export default function Skills() {
   const skills = [
     "Next.js",
-    "React",
+    "React Native",
+    "Laravel",
+    "Flutter",
+    "PHP",
+    "Kotlin",
+    "Java",
     "Tailwind CSS",
-    "Framer Motion",
+    "MySQL",
     "JavaScript",
     "TypeScript",
     "Node.js",
@@ -44,7 +49,7 @@ export default function Skills() {
         transition={{ delay: 0.5 }}
         className="mt-12 text-text text-center max-w-2xl mx-auto"
       >
-        I specialize in building modern, scalable web applications with a focus
+        I specialize in building modern, scalable website and mobile application with a focus
         on performance and user experience.
       </motion.p>
     </motion.div>
