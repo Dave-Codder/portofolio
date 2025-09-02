@@ -1,4 +1,11 @@
 {
+  "app\\books\\page.js -> ../components/PdfViewer": {
+    "id": "app\\books\\page.js -> ../components/PdfViewer",
+    "files": [
+      "static/css/_app-pages-browser_app_components_PdfViewer_js.css",
+      "static/chunks/_app-pages-browser_app_components_PdfViewer_js.js"
+    ]
+  },
   "node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts": {
     "id": "node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts",
     "files": [

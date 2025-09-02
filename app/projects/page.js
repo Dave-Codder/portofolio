@@ -106,7 +106,7 @@ export default function Projects() {
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800 p-6 rounded-lg shadow-lg"
           >
-            <h2 className="text-2xl font-semibold text-secondary mb-2">
+            <h2 className="text-2xl font-semibold text-center text-secondary mb-2">
               {project.title}
             </h2>
             <p className="text-text mb-2">{project.desc}</p>
