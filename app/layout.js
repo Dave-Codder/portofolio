@@ -131,7 +131,9 @@ export default function RootLayout({ children }) {
   };
 
   const prevTrack = () => {
-    setCurrentTrackIndex((prev) => (prev - 1 + playlist.length) % playlist.length);
+    setCurrentTrackIndex(
+      (prev) => (prev - 1 + playlist.length) % playlist.length
+    );
     setCurrentTime(0);
     setHasUserInteracted(true);
     setIsPlaying(true);
@@ -191,7 +193,7 @@ export default function RootLayout({ children }) {
         `}</style>
       </head>
       <body
-        className={`${inter.className} pb-28 sm:pb-20 md:pb-8 min-h-screen bg-gray-900 text-white`}
+        className={`${inter.className} pb-0 sm:pb-20 md:pb-8 min-h-screen bg-gray-900 text-white`}
         suppressHydrationWarning
       >
         <MusicContext.Provider value={{ playMusic }}>
@@ -206,30 +208,37 @@ export default function RootLayout({ children }) {
           animate={controls}
           initial={{ width: "56px", height: "56px" }}
         >
-          <motion.div
-            className="music-player music-logo p-2 rounded-xl shadow-xl transition-all duration-300 cursor-pointer"
-            onClick={toggleExpand}
-          >
-            <motion.div className="text-secondary flex items-center justify-center w-full h-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-yellow-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 0019.5 15.553zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
-                />
-              </svg>
+          {!isExpanded && (
+            <motion.div
+              className="music-player music-logo p-2 rounded-xl shadow-xl transition-all duration-100 cursor-pointer"
+              onClick={toggleExpand}
+              // animate={isPlaying ? { rotate: 180 } : {}}
+              // transition={{
+              //   duration: 1,
+              //   repeat: isPlaying ? Infinity : 0,
+              //   ease: "linear",
+              // }}
+            >
+              <motion.div className="text-secondary flex items-center justify-center w-full h-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 text-yellow-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 0019.5 15.553zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+                  />
+                </svg>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          )}
         </motion.div>
 
-        {/* Music Player Panel */}
         {isExpanded && playlist.length > 0 && (
           <motion.div
             className="fixed bottom-20 right-4 z-40 w-[calc(90vw-1rem)] max-w-xs sm:max-w-md h-[300px] sm:h-[352px] music-player rounded-lg shadow-lg overflow-hidden border border-yellow-400"
@@ -238,19 +247,16 @@ export default function RootLayout({ children }) {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="relative w-full h-full p-4">
+            <div className="relative w-full h-full p-4 bg-primary">
               <button
                 onClick={toggleExpand}
                 className="absolute top-2 right-2 text-white bg-gray-700 bg-opacity-80 p-1 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-600 transition-colors duration-300"
               >
                 -
               </button>
-              <div className="flex items-center h-full">
+              <div className="flex items-center h-full bg-primary">
                 <img
-                  src={
-                    playlist[currentTrackIndex].art ||
-                    "/images/Proyek Belajar.png"
-                  }
+                  src={playlist[currentTrackIndex].art || "/images/mark.png"}
                   alt={`${playlist[currentTrackIndex].title} artwork`}
                   className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg mr-4 object-cover border-2 border-yellow-400"
                   onError={() =>
