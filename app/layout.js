@@ -12,38 +12,6 @@ import { metadata } from "./metadata";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
-const styles = `
-  .music-player {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-  }
-  .music-player .controls button {
-    background: #ffd700;
-    color: #1a1a1a;
-    transition: background 0.3s, transform 0.2s;
-  }
-  .music-player .controls button:hover {
-    background: #e6b800;
-    transform: scale(1.1);
-  }
-  .music-player .progress-bar {
-    background: #ffd700;
-    height: 4px;
-  }
-  .music-player .time {
-    color: #ffd700;
-    font-size: 0.9rem;
-  }
-  .music-logo {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
 const MusicContext = createContext(null);
 
 export function useMusic() {
@@ -60,6 +28,7 @@ export default function RootLayout({ children }) {
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playlist, setPlaylist] = useState([]);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
   useEffect(() => {
     fetch("/api/music")
@@ -87,26 +56,50 @@ export default function RootLayout({ children }) {
       if (progressRef.current) {
         progressRef.current.max = audio.duration || 100;
       }
-      // Autoplay removed, will be triggered on button click
+      if (hasUserInteracted) {
+        audio.play().catch((err) => {
+          console.log("Autoplay failed:", err.message);
+          setIsPlaying(false);
+        });
+        setIsPlaying(true);
+      }
     };
 
-    const handleEnded = () => nextTrack();
+    const handleEnded = () => {
+      nextTrack();
+    };
+
+    const handlePlay = () => {
+      setIsPlaying(true);
+    };
+
+    const handlePause = () => {
+      setIsPlaying(false);
+    };
 
     audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
     audio.addEventListener("ended", handleEnded);
-    audio.addEventListener("error", () => setIsPlaying(false));
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("error", () => {
+      setIsPlaying(false);
+      console.error("Audio error occurred");
+    });
 
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
       audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
       audio.removeEventListener("error", () => {});
     };
-  }, [currentTrackIndex, playlist]);
+  }, [currentTrackIndex, playlist, hasUserInteracted]);
 
   const playMusic = () => {
     if (audioRef.current) {
+      setHasUserInteracted(true);
       audioRef.current.play().catch((err) => {
         console.log("Play failed:", err.message);
       });
@@ -116,6 +109,7 @@ export default function RootLayout({ children }) {
 
   const playPause = () => {
     if (audioRef.current) {
+      setHasUserInteracted(true);
       if (isPlaying) {
         audioRef.current.pause();
       } else {
@@ -131,15 +125,15 @@ export default function RootLayout({ children }) {
   const nextTrack = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % playlist.length);
     setCurrentTime(0);
+    setHasUserInteracted(true);
     setIsPlaying(true);
     track("music-next");
   };
 
   const prevTrack = () => {
-    setCurrentTrackIndex(
-      (prev) => (prev - 1 + playlist.length) % playlist.length
-    );
+    setCurrentTrackIndex((prev) => (prev - 1 + playlist.length) % playlist.length);
     setCurrentTime(0);
+    setHasUserInteracted(true);
     setIsPlaying(true);
     track("music-prev");
   };
@@ -154,6 +148,7 @@ export default function RootLayout({ children }) {
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+    setHasUserInteracted(true);
     track(isExpanded ? "player-minimized" : "player-expanded");
   };
 
@@ -163,7 +158,37 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{styles}</style>
+        <style jsx>{`
+          .music-player {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+          }
+          .music-player .controls button {
+            background: #ffd700;
+            color: #1a1a1a;
+            transition: background 0.3s, transform 0.2s;
+          }
+          .music-player .controls button:hover {
+            background: #e6b800;
+            transform: scale(1.1);
+          }
+          .music-player .progress-bar {
+            background: #ffd700;
+            height: 4px;
+          }
+          .music-player .time {
+            color: #ffd700;
+            font-size: 0.9rem;
+          }
+          .music-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        `}</style>
       </head>
       <body
         className={`${inter.className} pb-28 sm:pb-20 md:pb-8 min-h-screen bg-gray-900 text-white`}
@@ -279,8 +304,8 @@ export default function RootLayout({ children }) {
                           strokeWidth="2"
                           d={
                             isPlaying
-                              ? "M10 9v6m4-6v6"
-                              : "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                              ? "M6 4h4v16H6V4zm8 0h4v16h-4V4z" // Pause icon
+                              : "M8 5v14l11-7L8 5z" // Play icon
                           }
                         />
                       </svg>
