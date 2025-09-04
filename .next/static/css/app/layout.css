@@ -541,9 +541,6 @@ video {
 .top-2 {
   top: 0.5rem;
 }
-.right-0 {
-  right: 0px;
-}
 .z-40 {
   z-index: 40;
 }
@@ -590,11 +587,14 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-10 {
-  margin-top: 2.5rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
-.mt-20 {
-  margin-top: 5rem;
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
 }
 .flex {
   display: flex;
@@ -796,9 +796,6 @@ video {
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
 .from-primary {
   --tw-gradient-from: #1a1a1a var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(26 26 26 / 0) var(--tw-gradient-to-position);
@@ -809,21 +806,9 @@ video {
   --tw-gradient-to: rgb(245 158 11 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-yellow-400 {
-  --tw-gradient-from: #facc15 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(250 204 21 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.via-yellow-400 {
-  --tw-gradient-to: rgb(250 204 21 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #facc15 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
 .via-secondary {
   --tw-gradient-to: rgb(245 158 11 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #f59e0b var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.to-secondary {
-  --tw-gradient-to: #f59e0b var(--tw-gradient-to-position);
 }
 .to-primary {
   --tw-gradient-to: #1a1a1a var(--tw-gradient-to-position);
@@ -874,22 +859,11 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
 .pb-0 {
   padding-bottom: 0px;
 }
 .pb-20 {
   padding-bottom: 5rem;
-}
-.pr-24 {
-  padding-right: 6rem;
 }
 .text-center {
   text-align: center;
@@ -1060,17 +1034,8 @@ body {
     max-width: 28rem;
   }
 
-  .sm\:px-24 {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-
   .sm\:pb-20 {
     padding-bottom: 5rem;
-  }
-
-  .sm\:pr-36 {
-    padding-right: 9rem;
   }
 
   .sm\:text-xl {
@@ -1107,11 +1072,6 @@ body {
 
   .md\:p-8 {
     padding: 2rem;
-  }
-
-  .md\:px-32 {
-    padding-left: 8rem;
-    padding-right: 8rem;
   }
 
   .md\:pb-8 {

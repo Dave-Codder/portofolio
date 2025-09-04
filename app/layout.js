@@ -193,7 +193,7 @@ export default function RootLayout({ children }) {
         `}</style>
       </head>
       <body
-        className={`${inter.className} pb-0 sm:pb-20 md:pb-8 min-h-screen bg-gray-900 text-white`}
+        className={`${inter.className} pb-0 sm:pb-20 md:pb-8 min-h-screen mb-10 bg-gray-900 text-white`}
         suppressHydrationWarning
       >
         <MusicContext.Provider value={{ playMusic }}>
